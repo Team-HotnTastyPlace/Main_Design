@@ -43,29 +43,7 @@ public class TabsActivity extends ActivityGroup {
                 .setContent(new Intent(this, Wifi_MainActivity.class)));
         tabHost.addTab(tabHost.newTabSpec("Tab3")
                 .setIndicator("SockMain")
-//                .setContent(new Intent(this, SocketActivity.class)));
                 .setContent(new Intent(this, Socket_Main.class)));
-
-        tabHost.addTab(tabHost.newTabSpec("Tab4")
-                .setIndicator("Socket")
-//                .setContent(new Intent(this, SocketActivity.class)));
-                .setContent(new Intent(this, SocketActivity_list.class)));
-        tabHost.addTab(tabHost.newTabSpec("Tab5")
-                .setIndicator("Socket2")
-//                .setContent(new Intent(this, SocketActivity.class)));
-                .setContent(new Intent(this, SocketActivity.class)));
-
-        tabHost.setCurrentTab(2);
-
-//        tabHost.addTab(tabHost.newTabSpec("Tab5")
-//                .setIndicator("D_Care")
-//                .setContent(new Intent(this, WebViewActivity.class)));
-
-//        tabHost.setCurrentTab(1);  //탭호스트 이동
-
-//      tabHost.addTab(tabHost.newTabSpec("Tab3")
-//                .setIndicator("Map")
-//                .setContent(new Intent(this, Naver_Map.class)));
 
 
     }

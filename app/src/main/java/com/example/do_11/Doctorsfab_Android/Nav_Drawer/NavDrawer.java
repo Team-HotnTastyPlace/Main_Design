@@ -10,16 +10,25 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
 
+import com.example.do_11.Doctorsfab_Android.Exercise_list.ListviewAdapter;
+import com.example.do_11.Doctorsfab_Android.Exercise_list.Listviewitem;
 import com.example.do_11.Doctorsfab_Android.Wifi_Search.Wifi_MainActivity;
 import com.example.do_11.R;
+
+import java.util.ArrayList;
 
 public class NavDrawer extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    ListView listView_exercise;
+    public static String tag = "tag >>>>>>>>>>>> ";
 
 
     @Override
@@ -48,6 +57,44 @@ public class NavDrawer extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        listView_exercise = findViewById(R.id.listview_exercise);
+        ArrayList<Listviewitem> data = new ArrayList<>();
+
+        Listviewitem pushup = new Listviewitem(R.drawable.pushup, "pushup \n 15회. 3세트");
+        Listviewitem bentknee_sit_up = new Listviewitem(R.drawable.bentknee_sit_up, "bentknee_sit_up \n 15회. 3세트");
+        Listviewitem plank = new Listviewitem(R.drawable.plank, "plank \n 15회. 3세트");
+        Listviewitem lunge = new Listviewitem(R.drawable.lunge, "lunge \n 15회. 3세트");
+        Listviewitem glute_bridge = new Listviewitem(R.drawable.glute_bridge, "glute_bridge \n 15회. 3세트");
+
+        data.add(pushup);
+        data.add(bentknee_sit_up);
+        data.add(plank);
+        data.add(lunge);
+        data.add(glute_bridge);
+
+        ListviewAdapter adapter = new ListviewAdapter(this, R.layout.listview1_item, data);
+        listView_exercise.setAdapter(adapter);
+
+        listview_ClickEvent();
+
+
+
+
+    }
+
+    private void listview_ClickEvent() {
+        listView_exercise.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                Log.d(tag, String.valueOf(position));
+
+
+
+
+            }
+        });
     }
 
     @Override
@@ -78,7 +125,6 @@ public class NavDrawer extends AppCompatActivity
         if (id == R.id.action_settings) {
 
 
-
             return true;
         }
 
@@ -96,12 +142,7 @@ public class NavDrawer extends AppCompatActivity
             Intent intent = new Intent(this, Wifi_MainActivity.class);
             startActivity(intent);
 
-        } else if (id == R.id.nav_gallery) {
-
-
         } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
 
         } else if (id == R.id.nav_share) {
 
