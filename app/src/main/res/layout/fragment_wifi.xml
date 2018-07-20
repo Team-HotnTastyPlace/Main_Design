@@ -1,0 +1,48 @@
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.do_11.Doctorsfab_Android.Wifi_Search.Wifi_MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/wifiScan"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom|center"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@color/colorAccent2"
+
+            android:text="Scan"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:visibility="visible">
+
+        </Button>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/wifiRecyclerView"
+            android:layout_width="367dp"
+            android:layout_above="@id/wifiScan"
+            android:layout_height="match_parent"
+            android:layout_alignEnd="@+id/wifiScan"
+            android:layout_alignRight="@+id/wifiScan"
+
+            tools:layout_editor_absoluteX="461dp"
+            tools:layout_editor_absoluteY="369dp">
+
+        </android.support.v7.widget.RecyclerView>
+    </RelativeLayout>
+
+
+</android.support.constraint.ConstraintLayout>

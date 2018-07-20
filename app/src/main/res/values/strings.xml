@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Doctors Fab</string>
+    <string name="Doctorsfab_Android">My Application</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_nav_drawer">Doctors_Fab</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+</resources>
